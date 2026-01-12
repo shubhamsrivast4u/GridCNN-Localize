@@ -59,7 +59,6 @@ Each model:
 - Applies learning rate scheduling and early stopping
 - Evaluates performance using:
   - Grid classification accuracy
-  - Confusion matrix
   - Localization error (after grid-to-coordinate mapping)
   - Percentile-based error statistics
 
