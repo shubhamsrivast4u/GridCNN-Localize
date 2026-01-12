@@ -25,7 +25,7 @@ Three different neural network architectures are implemented and evaluated for t
 - **Input Features:**
   - Serving cell measurements: RSRP, RSRQ, RSSI, SINR
   - Neighbor cell measurements: RSRP, RSRQ, RSSI
-- **Output:** Predicted grid ID corresponding to UE location
+- **Output:** The spatial coordinate of the UE. From this prediction of grid ID (nearest) corresponding to UE location.
 - **Dataset Format:** JSON-based radio fingerprint dataset
 
 The localization area is divided into fixed-size grids, and the model predicts which grid the UE belongs to.
