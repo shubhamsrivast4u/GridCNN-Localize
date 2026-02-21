@@ -703,6 +703,10 @@ if __name__ == "__main__":
     # --- Positioning Error (RMSE) ---
     distance_error = np.linalg.norm(real - predicted, axis=1)
     mean_error = np.mean(distance_error)
+    diff = predicted - real
+    rmse_FFNN = np.sqrt(np.mean(np.sum(diff**2, axis=1)))
+
+    print(f"RMSE_FFNN = {rmse_FFNN:.3f} m")
     percentile_90 = np.percentile(distance_error, 90)
     
     # --- CRLB Calculation (New IEEE Requirement) ---
@@ -781,4 +785,5 @@ if __name__ == "__main__":
     with open(path_directory + 'metrics_single.pkl', 'wb') as file:
         pickle.dump(metrics_dict_single, file)
     
+
     print(f"\nAll results (including CRLB and Latency) saved to {path_directory}")
