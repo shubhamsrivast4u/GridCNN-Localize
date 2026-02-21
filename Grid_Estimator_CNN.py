@@ -662,6 +662,10 @@ if __name__ == "__main__":
     # Calculate positioning error
     distance_error = np.linalg.norm(real - predicted, axis=1)
     mean_error = np.mean(distance_error)
+    diff = predicted - real
+    rmse_CNN = np.sqrt(np.mean(np.sum(diff**2, axis=1)))
+
+    print(f"RMSE_CNN = {rmse_CNN:.3f} m")
     percentile_90 = np.percentile(distance_error, 90)
     
     # Save the confusion matrix for grid prediction
